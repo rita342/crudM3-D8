@@ -8,30 +8,103 @@
     <title>Back Office</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
-
+    <style>
+        body {
+            background-color: #131a22;
+        }
+        
+        .navbar-style {
+            background-color: #131a22;
+            position: fixed;
+            width: 100%;
+            /* color: white; */
+            z-index: 1;
+        }
+        
+        span {
+            color: rgb(80, 80, 235);
+        }
+        
+        #searchbar {
+            width: 70%;
+        }
+        
+        #searchbar .input-group-text.right-search {
+            background-color: #febd69;
+        }
+        /* .list-right {
+  display: flex;
+} */
+        
+        .account-for-fixed {
+            padding-top: 100px;
+        }
+        
+        .phone-link {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .phone-link:hover {
+            text-decoration: none;
+            color: orange;
+        }
+        
+        .stars {
+            list-style: none;
+            /* margin-left: none; */
+            padding-left: 0;
+        }
+        
+        .stars li {
+            display: inline;
+            color: #febd69;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="backoffice.html">Back Office</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    <nav class="navbar navbar-expand-md navbar-dark navbar-style">
+        <a class="navbar-brand" href="index.html">Amazon</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="detail.html">Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Back Office</a>
+                </li>
+            </ul>
+
+            <div id="searchbar" class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text left-search dropdown dropdown-toggle">All
+            </span>
+                </div>
+                <input type="text" class="form-control" />
+                <div class="input-group-append">
+                    <span class="input-group-text right-search"><i class="bi bi-search"></i
+            ></span>
+                </div>
+            </div>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Orders</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-            </ul>
-        </div>
+                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><i class="bi bi-cart"></i> 0</a
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
     <div class="container">
         <div class="row">
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="margin-top: 40px;">
 
 
             </div>
@@ -68,23 +141,18 @@
                 const container = document.querySelector(".card")
                 container.innerHTML = "";
                 data.forEach((obj) => {
-                    container.innerHTML += `<div style="margin-bottom:20px"> <img class="card-img-top" src="${obj.imageUrl}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">${obj.name}</h5>
-                    <p class="card-text">${obj.description}</p>
-                </div>
-               
-                <div class="card-body">
-                    <a href="#" class="card-link" href="details.html?id=${
+                    container.innerHTML += 
+                    `<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="${obj.imageUrl}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">${obj.name}</h5>
+    <p class="card-text" href="details.html?id=${
                 obj._id
-              }">>${obj.brand}</a>
-                    <a href="#" class="card-link">${obj.price}$</a>
+              }">${obj.description}</p>
+    <a href="#" class="btn btn-primary">${obj.brand}</a>
         </div>
-        </div>`
-                })
-            })
-        }
-    </script>
+        ` }) }) }
+        </script>
 </body>
 
 </html>
