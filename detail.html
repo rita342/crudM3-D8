@@ -20,11 +20,12 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a
+                  >
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link" href="backOffice.html">Back Office</a>
                 </li>
             </ul>
         </div>
@@ -47,13 +48,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
     <script>
-        const urllink = "https://striveschool-api.herokuapp.com/api/product/"
-        const headers = new Headers({
-            "content-type": "application/json",
-            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxN2M1ZWU3ODE4NzAwMTVjMjY3YTgiLCJpYXQiOjE2MzIzMjAwMjYsImV4cCI6MTYzMzUyOTYyNn0.w3xd1BZSB3w5fUqJc6sktUTnC0t4x1zZbQsy1ZtzH5A"
+        const container = document.getElementsByClassName("container")[0];
+        const phoneId = new URLSearchParams(window.location.search).get("id");
+        console.log(phoneId);
+        const urllink = "https://striveschool-api.herokuapp.com/api/product/" + phoneId,
+            const headers = new Headers({
+                "content-type": "application/json",
+                Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxN2M1ZWU3ODE4NzAwMTVjMjY3YTgiLCJpYXQiOjE2MzIzMjAwMjYsImV4cCI6MTYzMzUyOTYyNn0.w3xd1BZSB3w5fUqJc6sktUTnC0t4x1zZbQsy1ZtzH5A"
 
 
-        });
+            });
         const displayproduct = (product) => {
             fetch(urllink, {
                     headers
