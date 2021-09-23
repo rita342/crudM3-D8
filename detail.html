@@ -49,15 +49,15 @@
 
     <script>
         const container = document.getElementsByClassName("container")[0];
-        const phone = new URLSearchParams(window.location.search).get("id");
+        const phone = new URLSearchParams(window.location.search).get("objalbumId");
         console.log(phone);
-        const urllink = "https://striveschool-api.herokuapp.com/api/product/" + phone,
-            const headers = new Headers({
-                "content-type": "application/json",
-                Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxN2M1ZWU3ODE4NzAwMTVjMjY3YTgiLCJpYXQiOjE2MzIzMjAwMjYsImV4cCI6MTYzMzUyOTYyNn0.w3xd1BZSB3w5fUqJc6sktUTnC0t4x1zZbQsy1ZtzH5A"
+        const urllink = "https://striveschool-api.herokuapp.com/api/product/" + phone;
+        const headers = new Headers({
+            "content-type": "application/json",
+            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxN2M1ZWU3ODE4NzAwMTVjMjY3YTgiLCJpYXQiOjE2MzIzMjAwMjYsImV4cCI6MTYzMzUyOTYyNn0.w3xd1BZSB3w5fUqJc6sktUTnC0t4x1zZbQsy1ZtzH5A"
 
 
-            });
+        });
         const displayproduct = (product) => {
             fetch(urllink, {
                     headers

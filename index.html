@@ -65,7 +65,7 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark navbar-style">
-        <a class="navbar-brand" href="index.html">Amazon</a>
+        <a class="navbar-brand" href="backoffice.html">Amazon</a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -104,7 +104,7 @@
     </nav>
     <div class="container">
         <div class="row">
-            <div class="card" style="margin-top: 40px;">
+            <div id ="card" style="margin-top: 40px;">
 
 
             </div>
@@ -138,18 +138,18 @@
         window.onload = function() {
             displayproduct((data) => {
 
-                const container = document.querySelector(".card")
+                const container = document.querySelector("#card")
                 container.innerHTML = "";
                 data.forEach((obj) => {
                     container.innerHTML += 
-                    `<div class="card" style="width: 18rem;">
+                    `<div class="card" style="width: 18rem;margin-top=20px">
   <img class="card-img-top" src="${obj.imageUrl}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">${obj.name}</h5>
-    <p class="card-text" href="details.html?id=${
-                obj._id
+    <p class="card-text" href="details.html?objalbumId=${obj.id}" 
               }">${obj.description}</p>
-    <a href="#" class="btn btn-primary">${obj.brand}</a>
+              <p class="card-text">${obj.brand}</p>
+    <a href="backoffice.html?id=${obj._id}" class="btn btn-primary">edit</a>
         </div>
         ` }) }) }
         </script>
