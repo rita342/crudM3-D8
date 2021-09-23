@@ -140,16 +140,16 @@
 
                 const container = document.querySelector("#card")
                 container.innerHTML = "";
-                data.forEach((obj) => {
+                data.forEach((product) => {
                     container.innerHTML += 
                     `<div class="card" style="width: 18rem;margin-top=20px">
-  <img class="card-img-top" src="${obj.imageUrl}" alt="Card image cap">
+  <img class="card-img-top" src="${product.imageUrl}" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">${obj.name}</h5>
-    <p class="card-text" href="details.html?objalbumId=${obj.id}" 
-              }">${obj.description}</p>
-              <p class="card-text">${obj.brand}</p>
-    <a href="backoffice.html?id=${obj._id}" class="btn btn-primary">edit</a>
+    <h5 class="card-title">${product.name}</h5>
+    <p class="card-text" href="details.html?objalbumId=${product.id}" 
+              }">${product.description}</p>
+              <p class="card-text">${product.brand}</p>
+    <a class="btn btn-primary"  href="backoffice.html?id=${product._id}" >edit</a>
         </div>
         ` }) }) }
         </script>
